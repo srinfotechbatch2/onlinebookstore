@@ -7,5 +7,12 @@ pipeline {
               	    echo "repo cloned successfully"  
               	    }  
          	    } 
+				
+				stage("POLL SCM") {  
+           	    steps {  
+              	    echo "cloning repository" 
+              	    echo "repo cloned successfully"  
+              	    }  
+         	    } 
         }
 }
