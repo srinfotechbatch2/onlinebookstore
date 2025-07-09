@@ -5,7 +5,7 @@ agent any
 stages{
     stage('Clone The Project'){
         steps{
-            git branch: 'master', url: 'https://github.com/srinfotechbatch2/onlinebookstore.git'
+            git branch: 'feature/2025.07.09', url: 'https://github.com/srinfotechbatch2/onlinebookstore.git'
         }
     }
     
@@ -19,11 +19,7 @@ stages{
              bat 'mvn test'
         }
     }
-     stage('Generated the test reports'){
-        steps{
-             junit 'target/surefire-reports/*.xml'
-        }
-    }
+  
      stage('published the Artifacts'){
         steps{
             archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
